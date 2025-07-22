@@ -40,30 +40,43 @@ python app.py
 5.Abrir navegador en:
 http://127.0.0.1:5000
 
-Uso
--Regístrate con un usuario y contraseña.
--Inicia sesión.
--Completa el formulario con tus datos de salud.
--Recibe recomendaciones personalizadas.
--Recuerda que esto NO reemplaza atención médica profesional.
+6.Uso
+
+- Regístrate con un usuario y contraseña.
+- Inicia sesión.
+- Completa el formulario con tus datos de salud.
+- Recibe recomendaciones personalizadas.
+- Recuerda que esto NO reemplaza atención médica profesional.
 
 Estructura del proyecto
+
 salud_app/
+
 ├── app.py
+
 ├── templates/
+
 │   ├── login.html
+
 │   ├── register.html
+
 │   ├── home.html
+
 │   └── result.html
+
 └── static/
-    └── style.css
+
+  └── style.css
     
 Licencia
+
 Proyecto creado para fines educativos y presentación de hackathon.
 No se ofrece garantía médica ni responsabilidad por el uso del sistema.
 
 Autor
+
 Bernal Muñoz Jose de Jesus
 
 Contacto
+
 Puedes contactarme para dudas o sugerencias vía correo
