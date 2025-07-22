@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Recomendaciones</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h2>Recomendaciones de salud</h2>
+    <ul>
+        {% for r in recomendaciones %}
+        <li>{{ r }}</li>
+        {% endfor %}
+    </ul>
+    <p style="color: red;">Estas recomendaciones no sustituyen una consulta médica. Acude al médico en caso de duda o empeoramiento de síntomas.</p>
+    <a href="/home">Volver</a>
+</body>
+</html>

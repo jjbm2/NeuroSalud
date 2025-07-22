@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>NeuroSalud - Sistema de Recomendación</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h2>Bienvenido, {{ session['usuario'] }}</h2>
+    <form method="POST">
+        <label>Temperatura (°C):</label>
+        <input type="number" step="0.1" name="temperatura" required><br>
+        <label>¿Tiene tos?</label>
+        <select name="tos">
+            <option value="no">No</option>
+            <option value="si">Sí</option>
+        </select><br>
+        <label>Otros síntomas:</label><br>
+        <textarea name="sintomas" rows="4" cols="40" placeholder="Describe otros síntomas..."></textarea><br>
+        <button type="submit">Obtener recomendación</button>
+    </form>
+    <a href="/logout">Cerrar sesión</a>
+</body>
+</html>
