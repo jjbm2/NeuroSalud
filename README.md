@@ -77,6 +77,8 @@ Autor
 
 Bernal Muñoz Jose de Jesus
 
+Sebastián Badillo Romo
+
 Contacto
 
 Puedes contactarme para dudas o sugerencias vía correo
