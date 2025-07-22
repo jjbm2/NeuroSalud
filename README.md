@@ -79,6 +79,16 @@ Bernal Muñoz Jose de Jesus
 
 Sebastián Badillo Romo
 
+Lázaro Roberto Luevano Serna
+
+Betzabeth Jiménez Díaz
+
+Karen Ibeth Moreno Aguilar
+
+Carlos Isaac Reyes Martinez
+
+Luna Ximena Cortes González
+
 Contacto
 
 Puedes contactarme para dudas o sugerencias vía correo
