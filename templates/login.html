@@ -1,16 +1,70 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>NeuroSalud - Sistema de Recomendación</title>
-    <link rel="stylesheet" href="/static/style.css">
+    <title>Login - NeuroSalud</title>
 </head>
 <body>
-    <h2>Iniciar sesión</h2>
+    <h1>Iniciar sesión con cuenta tradicional</h1>
     <form method="POST">
-        <input type="text" name="usuario" placeholder="Usuario" required><br>
-        <input type="password" name="password" placeholder="Contraseña" required><br>
-        <button type="submit">Entrar</button>
+        <label>Usuario:</label><br>
+        <input type="text" name="usuario"><br><br>
+        <label>Contraseña:</label><br>
+        <input type="password" name="password"><br><br>
+        <input type="submit" value="Iniciar sesión">
     </form>
-    <p>¿No tienes cuenta? <a href="/register">Regístrate</a></p>
+
+    <p>¿No tienes cuenta? <a href="/register">Regístrate aquí</a></p>
+
+    <hr>
+
+    <h2>O usa tu identidad descentralizada (ICP)</h2>
+    <button onclick="loginICP()">Iniciar sesión con ICP</button>
+
+    <script type="module">
+      import { AuthClient } from "https://cdn.jsdelivr.net/npm/@dfinity/auth-client@1.1.2/dist/dfinity/auth-client.min.js";
+
+      let authClient;
+
+      async function initAuth() {
+        authClient = await AuthClient.create();
+        const isAuthenticated = await authClient.isAuthenticated();
+
+        if (isAuthenticated) {
+          const identity = authClient.getIdentity();
+          const principal = identity.getPrincipal().toText();
+          sendPrincipalToBackend(principal);
+        }
+      }
+
+      async function loginICP() {
+        await authClient.login({
+          identityProvider: "https://identity.ic0.app",
+          onSuccess: async () => {
+            const identity = authClient.getIdentity();
+            const principal = identity.getPrincipal().toText();
+            sendPrincipalToBackend(principal);
+          }
+        });
+      }
+
+      async function sendPrincipalToBackend(principal) {
+        const response = await fetch("/login_icp", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({ principal })
+        });
+
+        if (response.ok) {
+          window.location.href = "/home";
+        } else {
+          alert("Fallo la autenticación con ICP.");
+        }
+      }
+
+      window.addEventListener("DOMContentLoaded", initAuth);
+      window.loginICP = loginICP;
+    </script>
 </body>
 </html>
