@@ -23,7 +23,7 @@ Instalación
 
 1. Clonar repositorio:
 bash
-git clone https://github.com/tuusuario/neurosalud.git
+git clone https://github.com/jjbm2/NeuroSalud.git
 cd neurosalud
 
 2.Crear y activar entorno virtual (opcional pero recomendado):
